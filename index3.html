@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+    <title>Word and line counter</title>
+</head>
+<body>
+    <p class="heading">Word and Line Counter</p>
+    <div class="mainAr">
+        <p class="mn">Enter The Text</p>
+         <textarea name="text" id="text" cols="30" rows="10" placeholder="Type Here.."></textarea>
+         <button class="btn">SUBMIT</button>
+    </div>
+    <script>
+        function eval(){
+         var txt=document.querySelector('#text').value;
+        let arr=txt.split(" ");
+        let arr2=txt.split("\n");
+        alert("Number of words in the entered text is "+arr.length+" and number of lines in the entered text is "+arr2.length);
+        }
+        let btn=document.querySelector('.btn');
+        btn.addEventListener("click",eval);
+    </script>
+</body>
+</html>

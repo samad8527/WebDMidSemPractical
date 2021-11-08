@@ -1,0 +1,68 @@
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding:10px;
+}
+body{
+    font-family: 'Balsamiq Sans', cursive;
+    /* background-color: #FEF5ED; */
+    background-color: #FBFBFB;
+}
+
+
+.farm{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+}
+.nm,.eml,.phn,.query{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+label{
+    max-width: fit-content;
+}
+label::before {
+    content: "*";
+    color: red;
+    float: right;
+  }
+.fir,.sec{
+    margin:4px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.wh{
+    display: flex;
+    
+}
+#name,#email,#phone,#first,#last{
+    height: 30px;
+}
+.sbm{
+    display: flex;
+
+    justify-content: space-around;
+}
+.btn{
+ display:inline-block;
+ padding:0.7em 1.7em;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.2em;
+ cursor: pointer;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:400;
+ color:#FFFFFF;
+ background-color:#3369ff;
+ box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+ text-align:center;
+ position:relative;
+    }
+.btn:active{
+ box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style7.css">
+    <title>HTML and JS</title>
+</head>
+<body>
+    <p class="heading">Left Most Vowel In a String</p>
+    <div class="flx">
+
+        <textarea name="txt" id="txt" cols="30" rows="10" placeholder="Type here.."></textarea>
+        <p class="answer"></p>
+        <button class="btn">EVALUATE</button>
+    </div>
+    <p class="heading">Reverse the number</p>
+    <div class="flx">
+
+        <input type="number" name="nm" id="nm">
+        <p class="answer2"></p>
+        <button class="btn2">EVALUATE</button>
+    </div>
+
+</body>
+<script>
+    function eval(){
+        let str=document.querySelector('#txt').value;
+        let ans=document.querySelector('.answer');
+        let arr=['a','e','i','o','u'];
+        let p=Infinity;
+        for(let i=0;i<arr.length;i++){
+           if(str.indexOf(arr[i])!=-1)p=Math.min(p,str.indexOf(arr[i]));
+        }
+        if(p==Infinity){
+           ans.innerHTML="You have entered a text which don't have any vowel";
+        }
+        else{
+            ans.innerHTML=`The index of left most vowel is ${p} `;
+        }
+    }
+    function reverse(){
+        let number=document.querySelector('#nm').value;
+        let answer2=document.querySelector('.answer2');
+        let nes="";
+        for(let i=number.length-1;i>=0;i--){
+           nes+=number[i];
+        }
+        
+        answer2.innerHTML=nes;
+    }
+    let btn=document.querySelector('.btn');
+    btn.addEventListener('click',eval);
+   let btn2=document.querySelector('.btn2');
+    btn2.addEventListener('click',reverse);
+
+   
+    
+</script>
+</html>

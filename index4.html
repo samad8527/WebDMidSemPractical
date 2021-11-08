@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+    <title>Calculator</title>
+</head>
+<body>
+      <p class="heading">CALCULATOR</p>
+      <div class="mainAr">
+          
+             <div class="dp">
+
+                 <span class="head1">Operand 1</span>
+                 <input type="number" name="op1" id="op1">
+                </div> 
+             <div class="dp">
+
+                 <span class="head2">Operator</span>
+                 <input type="text" name="oprtr" id="optr">
+                </div>  
+                <div class="dp">
+                    
+                    <span class="head3">Operand 2</span>
+                    <input type="number" name="op2" id="op2">
+                </div> 
+                
+            </div>
+                <div class="res">
+
+                  <p class="display"></p>
+                  <button class="btn">CALCULATE</button>
+                </div>
+                
+                <script>
+      function calculate(){
+          let op1=document.querySelector('#op1').value;
+          let oprtr=document.querySelector('#optr').value;
+          let op2=document.querySelector('#op2').value;
+          let result=document.querySelector('.display');
+        //   console.log(+"  "+oprtr+"  "+op2);
+        if(op1=="" || op2=="" || oprtr==""){
+            result.innerHTML="PLEASE ENTER SOMETHING"
+        }
+        else{
+        let str=op1+oprtr+op2+"=";
+        op1=parseInt(op1);
+        op2=parseInt(op2);
+          if(oprtr=='+'){
+              result.innerHTML=str+(op1+op2);
+          }
+          else if(oprtr=='-'){
+            result.innerHTML=str+(op1-op2);
+          }
+          else if(oprtr=='*'){
+            result.innerHTML=str+(op1*op2);
+          }
+          else{
+            result.innerHTML=str+(op1/op2);
+          }
+        }
+      }
+      let btn=document.querySelector('.btn');
+      btn.addEventListener('click',calculate);
+      </script>
+</body>
+</html>

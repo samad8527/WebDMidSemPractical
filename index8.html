@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style8.css">
+    <title>Number in words</title>
+</head>
+<body>
+   <p class="heading">Number in words</p>
+   <div class="flx">
+
+       <input type="number" name="number" id="num">
+       <p class="answer"></p>
+       <button class="btn">CALCULATE</button>
+    </div>
+   <script>
+       function calculate(){
+           let num=document.querySelector('#num').value;
+           let ans=document.querySelector('.answer');
+           if(0<=parseInt(num) && parseInt(num)<=999){
+               let single=['','one','two','three','four','five','six','seven','eight','nine'];
+               let trivial=['','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen',
+                           'eighteen','nineteen'];
+               let double=['','ten','twenty','thirty','fourty','fifty','sixty','seventy','eoghty','ninety'];
+               let triple=['','one hundred','two hundred','three hundred','four hundred','five hundred','six hundred',
+                      'seven hundred','eight hundred','nine hundred'];
+                      let numm="";
+               if(num.length==1){
+                    numm=single[parseInt(num[0])];
+               }       
+               else if(num.length>=2 && num[num.length-2]=='1'){
+                     numm=trivial[parseInt(num[num.length-1])];
+                    if(num.length==3){
+                        numm=triple[parseInt(num[0])]+' '+numm;
+                    }
+
+               } 
+               else{
+                   if(num.length==2){
+                        numm=double[parseInt(num[0])]+' '+single[parseInt(num[1])];
+                   }
+                   else{
+                       numm=triple[parseInt(num[0])]+' '+double[parseInt(num[1])]+' '+single[parseInt(num[2])];
+                   }
+               }
+               ans.innerHTML=numm;      
+           }
+           else{
+               ans.innerHTML="OUT OF RANGE";
+           }
+       }
+       let btn=document.querySelector('.btn');
+       btn.addEventListener('click',calculate);
+   </script>
+</body>
+
+</html>

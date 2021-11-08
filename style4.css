@@ -1,0 +1,52 @@
+body{
+    font-family: 'Balsamiq Sans', cursive;
+    /* background-color: #FEF5ED; */
+    background-color: #FBFBFB;
+}
+.mainAr{
+    display:flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding:10px;
+}
+.dp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mainAr{
+    display: flex;
+    flex-direction: row;
+}
+.res{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.btn{
+    display: inline;
+
+    justify-content: center;
+
+    text-align: center;
+}
+.display{
+    text-align: center;
+}
+#op1,#op2{
+   width:50%;
+   height: 20px;
+}
+#optr{
+    height: 20px;
+    width: 20%;
+}

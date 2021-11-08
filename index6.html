@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style6.css">
+    <title>Square and Cube</title>
+</head>
+<body>
+    <p class="heading">Squares and Cubes of numbers from 0 to 10</p>
+    <table >
+        <tr class="hd">
+        </tr>
+        <tr class="sqr">
+          
+        </tr>
+        <tr class="cub">
+            
+        </tr>
+    </table>
+    <div class="res">
+
+        <button class="btn">CALCULATE</button>
+    </div>
+    <script>
+       function calci(){
+           let hd=document.querySelector('.hd');
+           let square=document.querySelector('.sqr');
+           let cube=document.querySelector('.cub');
+           hd.innerHTML="<th></th>";
+           square.innerHTML="<td>square</td>";
+           cube.innerHTML="<td>cube</td>"
+           for(let i=0;i<=10;i++){
+               let num=i;
+               let sqr=i*i;
+               let cbe=Math.pow(i,3);
+               console.log(num+" "+sqr+" "+cbe);
+               hd.innerHTML+=`<th>${num}</th>`;
+               square.innerHTML+=`<td>${sqr}</td>`;
+               cube.innerHTML+=`<td>${cbe}</td>`;
+
+           }
+       }
+       let btn=document.querySelector('.btn');
+       btn.addEventListener('click',calci);
+    </script>
+</body>
+</html>
